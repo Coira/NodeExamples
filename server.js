@@ -4,6 +4,7 @@ var path = require('path');
 var app = express();
 
 require(path.join(__dirname + '/TimestampMicroservice/timestamp'))(app);
+require(path.join(__dirname + '/RequestHeader/requestHeader'))(app);
 
 app.use(express.static(path.join(__dirname + '/css')));
 
