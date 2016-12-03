@@ -11,7 +11,10 @@ module.exports = function(app) {
     app.get('/node-examples/request-header', function(req, res) {
         //console.log(req.ip);
         res.json({
-            "ipaddress": req.host,
+            "ipaddress": req.headers['x-forwarded-for'] || 
+                req.connection.remoteAddress || 
+                req.socket.remoteAddress ||
+                req.connection.socket.remoteAddress,
             "language": req.acceptsLanguages()[0],
             "software": os.type() + " " + os.release()
         });
