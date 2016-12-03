@@ -3,7 +3,7 @@ var path = require('path');
 
 var app = express();
 
-require(path.join(__dirname + '/TimestampMicroservice/Timestamp'))(app);
+require(path.join(__dirname + '/TimestampMicroservice/timestamp'))(app);
 
 app.use(express.static(path.join(__dirname + '/css')));
 
