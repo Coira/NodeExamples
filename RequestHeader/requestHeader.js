@@ -9,9 +9,9 @@ var os = require('os');
 
 module.exports = function(app) {
     app.get('/node-examples/request-header', function(req, res) {
-
+        //console.log(req.ip);
         res.json({
-            "ipaddress": req.ip,
+            "ipaddress": req.host,
             "language": req.acceptsLanguages()[0],
             "software": os.type() + " " + os.release()
         });
