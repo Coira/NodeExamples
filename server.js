@@ -11,6 +11,6 @@ app.get('/node-examples', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.listen(process.argv[2] || 8080, function() {
+app.listen(process.env.PORT || 8080, function() {
     console.log('Server started');
 });
